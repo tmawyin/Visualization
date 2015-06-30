@@ -23,10 +23,10 @@ d3.xml("field.svg", function(xml) {
 		.style("display", "block")
 		.style("margin","auto");
 
-	var xVals = [990,1008,1030.5];
-	var yVals = [360,315,328.5];
-	var texto = ["CH","CH","U"];
-	var colors = ["red","red","blue"]
+	var xVals = [990,1008,1030.5,811.8];
+	var yVals = [360,315,328.5,382.5];
+	var texto = ["CH","CH","U","E"];
+	var colors = ["red","red","blue","yellow"]
 
 	var circle = svg.selectAll("g")
 			.data(xVals)
@@ -46,7 +46,8 @@ d3.xml("field.svg", function(xml) {
 				.attr("y",function(d,i){return yVals[i]+3.5;})
 				.text(function(d){return d;})
 				.style("font-family","Arial")
-				.style("fill","white")
+				.style("fill","black")
+				.style("stroke","black")
 				.style("font-size","10px");
 
 });
