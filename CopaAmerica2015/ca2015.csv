@@ -29,7 +29,16 @@ Ecuador,Mexico,M. Bolanos,Yellow,13,1,1,78,372,K,70.2,334.8
 Ecuador,Mexico,E. Valencia,Yellow,13,1,2,1130,414,P,1017,372.6
 Mexico,Ecuador,R. Jimenez,Olive,13,1,2,1100,400,P,990,360
 Chile,Bolivia,C. Aranguiz,Red,14,1,1,191,337,K,171.9,303.3
-Chile,Bolivia,A. Sanchez,Red,14,1,1,,,,0,0
-Chile,Bolivia,C. Aranguiz,Red,14,1,2,,,,0,0
-Chile,Bolivia,G. Medel,Red,14,1,2,,,,0,0
-Chile,Bolivia,A. Henriquez,Red,14,1,2,,,O,0,0
+Chile,Bolivia,A. Sanchez,Red,14,1,1,180,345,H,162,310.5
+Chile,Bolivia,C. Aranguiz,Red,14,1,2,1173,355,K,1055.7,319.5
+Chile,Bolivia,G. Medel,Red,14,1,2,1123,428,K,1010.7,385.2
+Chile,Bolivia,A. Henriquez,Red,14,1,2,1137,474,O,1023.3,426.6
+Uruguay,Paraguay,J. Gimenez,DodgerBlue,15,1,1,122,408,H,109.8,367.2
+Paraguay,Uruguay,L. Barrios,OrangeRed,15,1,1,1149,428,H,1034.1,385.2
+Argentina,Jamaica,G. Higuain,DeepSkyBlue,16,1,1,166,388,K,149.4,349.2
+Brazil,Venezuela,T. Silva,ForestGreen,18,1,1,165,429,K,148.5,386.1
+Brazil,Venezuela,R. Firmino,ForestGreen,18,1,2,1134,388,K,1020.6,349.2
+Venezuela,Brazil,N. Fedor,Red,18,1,2,1183,429,H,1064.7,386.1
+,,,,,,,,,,0,0
+,,,,,,,,,,0,0
+,,,,,,,,,,0,0

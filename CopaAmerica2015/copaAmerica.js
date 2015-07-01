@@ -29,6 +29,7 @@ d3.xml("field.svg", function(xml) {
 		    team: d.Team, // convert "Year" column to Date
 		    opp: d.Against,
 		    player: d.Player,
+		    type: d.Type,
 		    round: +d.Round,
 		    color: d.Color,
 		    game: +d.Game,
@@ -45,7 +46,10 @@ d3.xml("field.svg", function(xml) {
 				.append("circle")
 				.attr("cx", function(d){return d.x;} )
 				.attr("cy",function(d){return d.y;})
-				.attr("r",12)
+				.attr("r",function(d){ if (d.round==1) {return 10}
+									   else if (d.round==2) {return 12}
+									   else if (d.round==3) {return 14}
+									   	else {return 16};})
 				.style("fill",function(d){return d.color;});
 
 			var lables = svg.selectAll("text")
