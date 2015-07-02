@@ -54,9 +54,9 @@ d3.xml("field.svg", function(xml) {
 				.attr("cx", function(d){return d.x;} )
 				.attr("cy",function(d){return d.y;})
 				.attr("r",function(d){ if (d.round==1) {return 10}
-									   else if (d.round==2) {return 12}
-									   else if (d.round==3) {return 14}
-									   	else {return 16};})
+									   else if (d.round==2) {return 11}
+									   else if (d.round==3) {return 12}
+									   	else {return 13};})
 				.style("fill",function(d){return d.color;});
 				
 			// Adding the corresponding labels
