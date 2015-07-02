@@ -45,57 +45,22 @@ d3.xml("field.svg", function(xml) {
 			var circle = svg.selectAll("g")
 				.data(rows)
 				.enter()
-				.append("circle")
+				.append("g")
+				.attr("class","playerData");
+
+			// Addind circles to represent players
+			circle.append("circle")
+				.attr("class",".playerCircle")
 				.attr("cx", function(d){return d.x;} )
 				.attr("cy",function(d){return d.y;})
 				.attr("r",function(d){ if (d.round==1) {return 10}
 									   else if (d.round==2) {return 12}
 									   else if (d.round==3) {return 14}
 									   	else {return 16};})
-				.style("fill",function(d){return d.color;})
-				.on("mouseover", function(d) {
-
-					var xPosition = 50 + parseFloat(d3.select(this).attr("cx"));
-					var yPosition = 10 + parseFloat(d3.select(this).attr("cy"));
-
-					d3.select("#description")
-					  .style("left", xPosition + "px")
-					  .style("top", yPosition + "px")
-					  .select("#name")
-					  .text(d.player);
-					 
-					d3.select("#description") 
-					  .select("#team")
-					  .text(d.team);
-
-				  	d3.select("#description")
-					  .select("#opp")
-					  .text(d.opp);
-
-					d3.select("#description")
-					  .select("#rnd")
-					  .text(d.round);
-
-					d3.select("#description")
-					  .select("#type")
-					  .text(function(s){
-					  	if(d.tpe == "K") {return "Kick"}
-				  		else if(d.tpe == "H") {return "Header"}
-			  			else if(d.tpe == "P") {return "Penalty"}
-			  			else {return "Own goal"}
-					  });
-
-					d3.select("#description").classed("hidden", false);
-					   
-				})
-				.on("mouseout", function(d) {
-					d3.select("#description").classed("hidden", true);
-				});
-
-			var lables = svg.selectAll("text")
-				.data(rows)
-				.enter()
-				.append("text")
+				.style("fill",function(d){return d.color;});
+				
+			// Adding the corresponding labels
+			circle.append("text")
 				.attr("text-anchor", "middle")
 				.attr("x", function(d){return d.x;})
 				.attr("y",function(d){return d.y+3.5;})
@@ -103,11 +68,13 @@ d3.xml("field.svg", function(xml) {
 				.style("font-family","Arial")
 				.style("fill","black")
 				.style("stroke","black")
-				.style("font-size","10px")
-				.on("mouseover", function(d) {
+				.style("font-size","10px");
 
-					var xPosition = 50 + parseFloat(d3.select(this).attr("x"));
-					var yPosition = 10 -3.5 + parseFloat(d3.select(this).attr("y"));
+			// Adding functionality for mouse over
+			circle.on("mouseover", function(d) {
+
+					var xPosition = 50 + parseFloat(d3.select(this.children[0]).attr("cx"));
+					var yPosition = 10 + parseFloat(d3.select(this.children[0]).attr("cy"));
 
 					d3.select("#description")
 					  .style("left", xPosition + "px")
@@ -142,66 +109,6 @@ d3.xml("field.svg", function(xml) {
 				.on("mouseout", function(d) {
 					d3.select("#description").classed("hidden", true);
 				});
-
 	});
 
 });
-
-/*
-.on("mouseover", function(d) {
-
-			var xPosition = scaleh(50 + parseFloat(d3.select(this).attr("cx")));
-			var yPosition = scalev(10 + parseFloat(d3.select(this).attr("cy")));
-
-
-
-			d3.select("#tooltip")
-			  .style("left", xPosition + "px")
-			  .style("top", yPosition + "px")
-			  .select("#name")
-			  .text(d.nodes[0].name);
-			 
-			d3.select("#tooltip") 
-			  .select("#number")
-			  .text(d.nodes[0].Number);
-
-			  d3.select("#tooltip")
-			  .select("#pos")
-			  .text(d.nodes[0].Position);
-
-			d3.select("#tooltip").classed("hidden", false);
-			   
-		})
-*/
-
-
-
-
-/* TESTING CODE ------
-	// var xVals = [990,1008,1030.5,811.8,162];
-	// var yVals = [360,315,328.5,382.5,216];
-	// var texto = ["CH","CH","U","E","A"];
-	// var colors = ["red","red","DodgerBlue","yellow","DeepSkyBlue"]
-
-	// var circle = svg.selectAll("g")
-	// 		.data(xVals)
-	// 		.enter()
-	// 		.append("circle")
-	// 		.attr("cx", function(d){return d;} )
-	// 		.attr("cy",function(d,i){return yVals[i];})
-	// 		.attr("r",12)
-	// 		.style("fill",function(d,i){return colors[i];});
-
-	// var lables = svg.selectAll("text")
-	// 			.data(texto)
-	// 			.enter()
-	// 			.append("text")
-	// 			.attr("text-anchor", "middle")
-	// 			.attr("x", function(d,i){return xVals[i];})
-	// 			.attr("y",function(d,i){return yVals[i]+3.5;})
-	// 			.text(function(d){return d;})
-	// 			.style("font-family","Arial")
-	// 			.style("fill","black")
-	// 			.style("stroke","black")
-	// 			.style("font-size","10px");
-	*/
