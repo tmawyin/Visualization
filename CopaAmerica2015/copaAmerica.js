@@ -53,9 +53,9 @@ d3.xml("field.svg", function(xml) {
 				.attr("class",".playerCircle")
 				.attr("cx", function(d){return d.x;} )
 				.attr("cy",function(d){return d.y;})
-				.attr("r",function(d){ if (d.round==1) {return 10}
-									   else if (d.round==2) {return 11}
-									   else if (d.round==3) {return 12}
+				.attr("r",function(d){ if (d.round== 1) {return 10}
+									   else if (d.round== 2) {return 11}
+									   else if (d.round== 3) {return 12}
 									   	else {return 13};})
 				.style("fill",function(d){return d.color;});
 				
