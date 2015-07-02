@@ -2,6 +2,7 @@
 // Display of all the goals scored in the tournament
 var canvas = d3.select('body')
 			.append("div")
+			.attr("class","page")
 			.style("width","95%")
 			.style("margin","auto");
 
@@ -16,7 +17,8 @@ canvas.append("p")
 
 // Adding the field from svg file	
 d3.xml("field.svg", function(xml) {
-	svgdom = document.body.childNodes[2].appendChild(xml.documentElement);
+	// We want to append the xml file to the "page" div
+	svgdom = document.getElementsByClassName("page")[0].appendChild(xml.documentElement);
 	
 	// Selecting the field and displaying it on the center of the screen
 	var svg = d3.select('svg')
@@ -29,7 +31,7 @@ d3.xml("field.svg", function(xml) {
 		    team: d.Team, // convert "Year" column to Date
 		    opp: d.Against,
 		    player: d.Player,
-		    type: d.Type,
+		    tpe: d.Type,
 		    round: +d.Round,
 		    color: d.Color,
 		    game: +d.Game,
@@ -50,7 +52,45 @@ d3.xml("field.svg", function(xml) {
 									   else if (d.round==2) {return 12}
 									   else if (d.round==3) {return 14}
 									   	else {return 16};})
-				.style("fill",function(d){return d.color;});
+				.style("fill",function(d){return d.color;})
+				.on("mouseover", function(d) {
+
+					var xPosition = 50 + parseFloat(d3.select(this).attr("cx"));
+					var yPosition = 10 + parseFloat(d3.select(this).attr("cy"));
+
+					d3.select("#description")
+					  .style("left", xPosition + "px")
+					  .style("top", yPosition + "px")
+					  .select("#name")
+					  .text(d.player);
+					 
+					d3.select("#description") 
+					  .select("#team")
+					  .text(d.team);
+
+				  	d3.select("#description")
+					  .select("#opp")
+					  .text(d.opp);
+
+					d3.select("#description")
+					  .select("#rnd")
+					  .text(d.round);
+
+					d3.select("#description")
+					  .select("#type")
+					  .text(function(s){
+					  	if(d.tpe == "K") {return "Kick"}
+				  		else if(d.tpe == "H") {return "Header"}
+			  			else if(d.tpe == "P") {return "Penalty"}
+			  			else {return "Own goal"}
+					  });
+
+					d3.select("#description").classed("hidden", false);
+					   
+				})
+				.on("mouseout", function(d) {
+					d3.select("#description").classed("hidden", true);
+				});
 
 			var lables = svg.selectAll("text")
 				.data(rows)
@@ -63,10 +103,79 @@ d3.xml("field.svg", function(xml) {
 				.style("font-family","Arial")
 				.style("fill","black")
 				.style("stroke","black")
-				.style("font-size","10px");
+				.style("font-size","10px")
+				.on("mouseover", function(d) {
+
+					var xPosition = 50 + parseFloat(d3.select(this).attr("x"));
+					var yPosition = 10 -3.5 + parseFloat(d3.select(this).attr("y"));
+
+					d3.select("#description")
+					  .style("left", xPosition + "px")
+					  .style("top", yPosition + "px")
+					  .select("#name")
+					  .text(d.player);
+					 
+					d3.select("#description") 
+					  .select("#team")
+					  .text(d.team);
+
+				  	d3.select("#description")
+					  .select("#opp")
+					  .text(d.opp);
+
+					d3.select("#description")
+					  .select("#rnd")
+					  .text(d.round);
+
+					d3.select("#description")
+					  .select("#type")
+					  .text(function(s){
+					  	if(d.tpe == "K") {return "Kick"}
+				  		else if(d.tpe == "H") {return "Header"}
+			  			else if(d.tpe == "P") {return "Penalty"}
+			  			else {return "Own goal"}
+					  });
+
+					d3.select("#description").classed("hidden", false);
+					   
+				})
+				.on("mouseout", function(d) {
+					d3.select("#description").classed("hidden", true);
+				});
+
 	});
 
 });
+
+/*
+.on("mouseover", function(d) {
+
+			var xPosition = scaleh(50 + parseFloat(d3.select(this).attr("cx")));
+			var yPosition = scalev(10 + parseFloat(d3.select(this).attr("cy")));
+
+
+
+			d3.select("#tooltip")
+			  .style("left", xPosition + "px")
+			  .style("top", yPosition + "px")
+			  .select("#name")
+			  .text(d.nodes[0].name);
+			 
+			d3.select("#tooltip") 
+			  .select("#number")
+			  .text(d.nodes[0].Number);
+
+			  d3.select("#tooltip")
+			  .select("#pos")
+			  .text(d.nodes[0].Position);
+
+			d3.select("#tooltip").classed("hidden", false);
+			   
+		})
+*/
+
+
+
 
 /* TESTING CODE ------
 	// var xVals = [990,1008,1030.5,811.8,162];
