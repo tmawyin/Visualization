@@ -4,8 +4,48 @@
 		<meta charset="UTF-8"> 
 		<title> Copa America 2015 - Goals </title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+
+		<!-- Adding some CSS style -->
+		<style>
+			#description {
+		        position: absolute;
+		        width: 150px;
+		        height: auto;
+		        padding: 5px;
+		        background-color: white;
+				opacity: 0.8;
+		        -webkit-border-radius: 5px;
+		        -moz-border-radius: 5px;
+		        border-radius: 5px;
+		        -webkit-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+		        -moz-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+		        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+		        pointer-events: none;
+			}
+
+			#description.hidden {
+	    	    display: none;
+				}
+
+			#description p {
+		        margin: 0;
+		        font-family: sans-serif;
+		        font-size: 12px;
+		        line-height: 16px;
+				}
+	</style>
+
+
 	</head>
 	<body>
+		<div id="description" class="hidden">
+	        <p><strong>Player Detail</strong></p>
+	        <p>Name: <span id="name">100</span></p>
+			<p>Team: <span id="team">100</span></p>
+			<p>Opponent: <span id="opp">100</span></p>
+			<p>Round: <span id="rnd">100</span></p>
+			<p>Type: <span id="type">100</span></p>
+		</div>
 		<script src= "copaAmerica.js"></script>
 	</body>
 </html>
