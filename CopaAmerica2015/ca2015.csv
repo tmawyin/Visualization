@@ -26,17 +26,33 @@ Argentina,Uruguay,S. Aguero,DeepSkyBlue,10,1,2,1150,455,K,1035,409.5
 Colombia,Brazil,J. Murillo,Yellow,11,1,1,156,428,K,140.4,385.2
 Peru,Venezuela,C. Pizarro,White,12,1,2,1136,304,K,1022.4,273.6
 Ecuador,Mexico,M. Bolanos,Yellow,13,1,1,78,372,K,70.2,334.8
-Ecuador,Mexico,E. Valencia,Yellow,13,1,2,1130,414,P,1017,372.6
+Ecuador,Mexico,E. Valencia,Yellow,13,1,2,1130,414,K,1017,372.6
 Mexico,Ecuador,R. Jimenez,Olive,13,1,2,1100,400,P,990,360
 Chile,Bolivia,C. Aranguiz,Red,14,1,1,191,337,K,171.9,303.3
 Chile,Bolivia,A. Sanchez,Red,14,1,1,180,345,H,162,310.5
 Chile,Bolivia,C. Aranguiz,Red,14,1,2,1173,355,K,1055.7,319.5
 Chile,Bolivia,G. Medel,Red,14,1,2,1123,428,K,1010.7,385.2
-Chile,Bolivia,A. Henriquez,Red,14,1,2,1137,474,O,1023.3,426.6
+Chile,Bolivia,R. Raldes,Red,14,1,2,1137,474,O,1023.3,426.6
 Uruguay,Paraguay,J. Gimenez,DodgerBlue,15,1,1,122,408,H,109.8,367.2
 Paraguay,Uruguay,L. Barrios,OrangeRed,15,1,1,1149,428,H,1034.1,385.2
 Argentina,Jamaica,G. Higuain,DeepSkyBlue,16,1,1,166,388,K,149.4,349.2
 Brazil,Venezuela,T. Silva,ForestGreen,18,1,1,165,429,K,148.5,386.1
 Brazil,Venezuela,R. Firmino,ForestGreen,18,1,2,1134,388,K,1020.6,349.2
 Venezuela,Brazil,N. Fedor,Red,18,1,2,1183,429,H,1064.7,386.1
-Chile,Uruguay,M. Isla,Red,19,2,2,1037,458,K,933.3,412.2
+Chile,Uruguay,M. Isla,Red,19,2,2,1055,458,K,949.5,412.2
+Peru,Bolivia,P. Guerrero,White,20,2,1,109,419,H,98.1,377.1
+Peru,Bolivia,P. Guerrero,White,20,2,1,141,434,K,126.9,390.6
+Peru,Bolivia,P. Guerrero,White,20,2,2,1056,418,K,950.4,376.2
+Bolivia,Peru,M. Moreno,White,20,2,2,1100,400,P,990,360
+Brazil,Paraguay,Robinho,ForestGreen,22,2,1,116,422,K,104.4,379.8
+Paraguay,Brazil,D. Gonzalez,OrangeRed,22,2,2,1100,400,P,990,360
+Chile,Peru,E. Vargas,Red,23,3,1,85,350,K,76.5,315
+Chile,Peru,E. Vargas,Red,23,3,2,960,521,K,864,468.9
+Peru,Chile,G. Medel,White,23,3,2,1171,455,O,1053.9,409.5
+Argentina,Paraguay,M. Rojo,DeepSkyBlue,24,3,1,131,428,K,117.9,385.2
+Argentina,Paraguay,J. Pastore,DeepSkyBlue,24,3,1,232,320,K,208.8,288
+Argentina,Paraguay,A. Di Maria,DeepSkyBlue,24,3,2,1135,325,K,1021.5,292.5
+Argentina,Paraguay,A. Di Maria,DeepSkyBlue,24,3,2,1127,465,K,1014.3,418.5
+Argentina,Paraguay,S. Aguero,DeepSkyBlue,24,3,2,1133,385,H,1019.7,346.5
+Argentina,Paraguay,G. Higuain,DeepSkyBlue,24,3,2,1114,428,K,1002.6,385.2
+Paraguay,Argentina,L. Barrios,OrangeRed,24,3,1,250,366,K,225,329.4
