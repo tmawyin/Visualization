@@ -4,6 +4,7 @@
 		<meta charset="UTF-8"> 
 		<title> Copa America 2015 - Goals </title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 		<!-- Adding some CSS style -->
 		<style>
@@ -33,6 +34,16 @@
 		        font-size: 12px;
 		        line-height: 16px;
 				}
+
+			p{
+				font-family: Lato;
+				font-size: 17px;
+			}
+
+			h3{
+				font: Lato;
+				font-size: 22px;
+			}
 	</style>
 
 
@@ -46,6 +57,12 @@
 			<p>Round: <span id="rnd">100</span></p>
 			<p>Type: <span id="type">100</span></p>
 		</div>
+	
+		<h3 style="color:blue; text-align:center; position:relative">Copa America 2015 - Goals Scored</h3>
+		<p style="width:95%; margin:auto; padding:15px">Copa America is a tournament played between the men's soccer teams of CONMEBOL in South America. The 2015 Copa America was hosted in Chile, where 12 teams aimed to get the title of the oldest international continental soccer competition. The champion of the tournament this year was Chile.</p>
+		
+		<p style="width:95%; margin:auto; padding:15px">The map displayed here aims to show the relative positions where all goals where scored. Each country (circle) is colour coded and contains a two letter representation of the country name. You can hover over each circle to display the player who score and against what team. Similarly, the left field represents all the goals scored during the first half, while the right side of the field represents the goals scored during the second half of the game.</p>
+
 		<script src= "copaAmerica.js"></script>
 	</body>
 </html>

@@ -6,14 +6,6 @@ var canvas = d3.select('body')
 			.style("width","95%")
 			.style("margin","auto");
 
-canvas.append("h3")
-	.text("Copa America 2015 - Goals Scored")
-	.style("color","blue")
-	.style("position","relative")
-	.style("text-align","center")
-
-canvas.append("p").text("A display of all the goals scored during the Copa America 2015 - Penalties rounds are not included. Hover the mouse on each player to see the statistics.")
-
 // Adding the field from svg file	
 d3.xml("field.svg", function(xml) {
 	// We want to append the xml file to the "page" div
@@ -22,8 +14,6 @@ d3.xml("field.svg", function(xml) {
 	// Selecting the field and displaying it on the center of the screen
 	var svg = d3.select('svg')
 		.style("display", "block")
-		.attr("width", "90%")
-		.attr("height","700px")
 		.style("margin","auto");
 
 	// Loading the CSV file and parsing through the data
@@ -47,7 +37,7 @@ d3.xml("field.svg", function(xml) {
 				.data(rows)
 				.enter()
 				.append("g")
-				.attr("class",function(d){return d.label;});
+				.attr("class",function(d){return d.label + " team";});
 
 			// Addind circles to represent players
 			circle.append("circle")
@@ -74,8 +64,11 @@ d3.xml("field.svg", function(xml) {
 			// Adding functionality for mouse over
 			circle.on("mouseover", function(d) {
 
-					var xPosition = 50 + parseFloat(d3.select(this.children[0]).attr("cx"));
-					var yPosition = -10 + parseFloat(d3.select(this.children[0]).attr("cy"));
+					// var xPosition = parseFloat(d3.select(this.children[0]).attr("cx"));
+					// var yPosition = parseFloat(d3.select(this.children[0]).attr("cy"));
+
+					var xPosition = parseFloat(d3.select("body").style("width"))/2.0-75 ;
+					var yPosition = parseFloat(d3.select(this.parentNode).attr("height"))/2.0 + 150;
 
 					d3.select("#description")
 					  .style("left", xPosition + "px")
