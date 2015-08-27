@@ -3,8 +3,22 @@
 var canvas = d3.select('body')
 			.append("div")
 			.attr("class","page")
-			.style("width","95%")
-			.style("margin","auto");
+			.style("position","relative")
+			.style("width","100%")
+			.style("height","auto")
+			.style("max-width","1208px")
+			.style("margin","0px auto");
+
+canvas.append("div")
+	.attr("class","hidden")
+	.attr("id","description")
+	.style("position","absolute")
+	.append("p").text("Player Details").style("font-weight","bold");
+d3.select("#description").append("p").text("Name: ").style("font-weight","normal").append("span").attr("id","name")
+d3.select("#description").append("p").text("Team: ").style("font-weight","normal").append("span").attr("id","team")
+d3.select("#description").append("p").text("Opponent: ").style("font-weight","normal").append("span").attr("id","opp")
+d3.select("#description").append("p").text("Round: ").style("font-weight","normal").append("span").attr("id","rnd")
+d3.select("#description").append("p").text("Type: ").style("font-weight","normal").append("span").attr("id","type")
 
 // Adding the field from svg file	
 d3.xml("field.svg", function(xml) {
@@ -14,6 +28,8 @@ d3.xml("field.svg", function(xml) {
 	// Selecting the field and displaying it on the center of the screen
 	var svg = d3.select('svg')
 		.style("display", "block")
+		.style("width","100%")
+		.style("height","auto")
 		.style("margin","auto");
 
 	// Loading the CSV file and parsing through the data
@@ -64,11 +80,11 @@ d3.xml("field.svg", function(xml) {
 			// Adding functionality for mouse over
 			circle.on("mouseover", function(d) {
 
-					// var xPosition = parseFloat(d3.select(this.children[0]).attr("cx"));
-					// var yPosition = parseFloat(d3.select(this.children[0]).attr("cy"));
+					var xPosition = parseFloat(d3.select(this.children[0]).attr("cx"));
+					var yPosition = parseFloat(d3.select(this.children[0]).attr("cy"));
 
-					var xPosition = parseFloat(d3.select("body").style("width"))/2.0-75 ;
-					var yPosition = parseFloat(d3.select(this.parentNode).attr("height"))/2.0 + 150;
+					// var xPosition = parseFloat(d3.select("body").style("width"))/2.0-75 ;
+					// var yPosition = parseFloat(d3.select(this.parentNode).attr("height"))/2.0 + 150;
 
 					d3.select("#description")
 					  .style("left", xPosition + "px")
