@@ -37,7 +37,7 @@ d3.xml("field.svg", function(xml) {
 				.data(rows)
 				.enter()
 				.append("g")
-				.attr("class",function(d){return d.label + " team";});
+				.attr("class",function(d){return d.label + " TEAM";});
 
 			// Addind circles to represent players
 			circle.append("circle")

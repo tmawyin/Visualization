@@ -4,6 +4,7 @@
 		<meta charset="UTF-8"> 
 		<title> Copa America 2015 - Goals </title>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 		<!-- Adding some CSS style -->
@@ -44,6 +45,12 @@
 				font: Lato;
 				font-size: 22px;
 			}
+			form{
+				font:Lato;
+			}
+			h5{
+				font:Lato;
+			}
 	</style>
 
 
@@ -64,5 +71,70 @@
 		<p style="width:95%; margin:auto; padding:15px">The map displayed here aims to show the relative positions where all goals where scored. Each country (circle) is colour coded and contains a two letter representation of the country name. You can hover over each circle to display the player who score and against what team. Similarly, the left field represents all the goals scored during the first half, while the right side of the field represents the goals scored during the second half of the game.</p>
 
 		<script src= "copaAmerica.js"></script>
+		
+		<p style="width:80%; margin:auto; padding:15px">Select any team to visualize it individually </p>
+		<form action="" style="width:80%; margin:auto; padding:15px">
+			<input type="radio" name="teams" id="all" value="All" checked>All
+			<h5 style="font:Lato; width:80%; margin:auto; padding:5px">GROUP A</h5>
+			<input type="radio" name="teams" id="chi" value="Chile">Chile	
+			<input type="radio" name="teams" id="mex" value="Mexico">Mexico	
+			<input type="radio" name="teams" id="ecu" value="Ecuador">Ecuador
+			<input type="radio" name="teams" id="bol" value="Bolivia">Bolivia<br>
+
+			<h5 style="width:80%; margin:auto; padding:5px">GROUP B</h5>
+			<input type="radio" name="teams" id="arg" value="Argentina">Argentina
+			<input type="radio" name="teams" id="uru" value="Uruguay">Uruguay
+			<input type="radio" name="teams" id="par" value="Paraguay">Paraguay
+			<input type="radio" name="teams" id="jam" value="Jamaica">Jamaica
+
+			<h5 style="font:Lato; width:80%; margin:auto; padding:5px">GROUP C</h5>
+			<input type="radio" name="teams" id="bra" value="Brasil">Brasil
+			<input type="radio" name="teams" id="col" value="Colombia">Colombia
+			<input type="radio" name="teams" id="per" value="Peru">Peru
+			<input type="radio" name="teams" id="ven" value="Venezuela">Venezuela
+		</form>
+		<script>
+			$('input:radio[name="teams"]').click(function() {
+	    		if ($('#all').is(':checked')){
+	    			$('.TEAM').show();
+	    		}else if ($('#chi').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.CH').show()
+	    		}else if ($('#mex').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.ME').show()
+	    		}else if ($('#ecu').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.EC').show()
+	    		}else if ($('#bol').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.BO').show()
+	    		}else if ($('#arg').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.AR').show()
+	    		}else if ($('#uru').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.UR').show()
+	    		}else if ($('#par').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.PA').show()
+	    		}else if ($('#jam').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.JA').show()
+	    		}else if ($('#bra').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.BR').show()
+	    		}else if ($('#col').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.CO').show()
+	    		}else if ($('#per').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.PE').show()
+	    		}else if ($('#ven').is(':checked')){
+	    			$('.TEAM').hide()
+	    			$('.VE').show()
+	    		}
+			});
+		</script>
 	</body>
 </html>
